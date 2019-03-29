@@ -1,11 +1,11 @@
-# Add Your Schedule using JSON
+# Add Your Schedule using NodeJS
 
 *Created by Hyunjin*
 
 *March 28, 2019* 
 
 ## Back-end Development
-Used Json, XML, Javascript
+Used Json, XML, NodeJS
 
 ## Demo
 
