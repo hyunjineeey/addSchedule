@@ -1,10 +1,11 @@
-# addSchedule
+# Add Your Schedule using JSON
 
 *Created by Hyunjin*
 
 *March 28, 2019* 
 
-## Add Your Schedule using JSON
+## Back-end Development
+Used Json, XML, Javascript
 
 ## Demo
 
