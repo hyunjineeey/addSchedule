@@ -1,11 +1,11 @@
 {
-  "name": "jaexx003_hw05",
+  "name": "Hyunjin Jae",
   "version": "1.0.0",
-  "description": "Assignment 5",
+  "description": "Add Your Schedule",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jaexx003",
+  "author": "Hyunjin Jae",
   "license": "ISC"
 }
