@@ -1,0 +1,125 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+     <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><b>Home</b></a></li>
+                <li><a href="schedule.html"><b>Schedule</b></a></li>
+                <li><a href="addSchedule.html"><b>Add Schedule Event</b></a></li>
+                <li><a href="stock.html"><b>Stock Page</b></a></li>
+            </ul>
+        </div>
+    </nav><br><br><br>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body"><center>Welcome to Stock Page</center></div>
+        </div>
+    </div>
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered table-hover">
+                    <tbody id="tbody">
+                        <tr>
+                            <td class="col-md-6">Company</td>
+                            <td class="col-md-6">
+                                <div class="form-group">
+                                    <select name="Company" id="company">
+                                        <option value="MSFT">Microsoft</option>
+                                        <option value="BA">Boeing Company</option>
+                                        <option value="AAPL">Apple Inc</option>
+                                        <option value="AMZN">Amazon</option>
+                                        <option value="NVDA">NVIDIA Corporation</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" id="data">Get Data</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <table class="table" id="StockData">
+            <thead>
+                <tr>
+                    <th scope="col">Company-MetaData</th>
+                    <th scope="col">Stock-Info</th>
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+
+        var data = document.getElementById('data')
+
+        data.addEventListener("click", function(){
+            var company = document.getElementById('company').value;
+            console.log(company)
+            var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${company}&apikey=YOUT_API_KEY`;
+            api('GET', url);
+        })
+
+        function api (method, url) {
+            let http = new XMLHttpRequest()
+            http.addEventListener('load', () => {
+                if (http.readyState === XMLHttpRequest.DONE) {
+                    if (http.status === 200) {
+                        let json = JSON.parse(http.responseText)
+                        console.log(json)
+                        buildTable(json);
+                    }
+                }
+            })
+            http.open(method, url, true);
+            http.send();
+        }
+
+        function buildTable(json) {
+            
+            var row = document.createElement('tr')
+            var col = document.createElement('td')
+            var col2 = document.createElement('td')
+
+            var metaData = JSON.stringify(json["Meta Data"])
+            var timeSeries = JSON.stringify(json["Time Series (Daily)"])
+
+            var metaNode = document.createTextNode(metaData)
+            var timeNode = document.createTextNode(timeSeries)
+
+            col.appendChild(metaNode)
+            col2.appendChild(timeNode)
+
+            row.appendChild(col)
+            row.appendChild(col2)
+
+            var tbody = document.getElementById('tbody')
+            tbody.appendChild(row)
+        }
+
+    </script>
+
+
+</body>
+</html>
