@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="client/js/admin.js"></script>
+  <script type="text/javascript" src="client/js/user.js"></script>
+  <link rel="stylesheet" type="text/css" href="client/css/style.css">
+  <title>Admin</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/schedule">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addSchedule">Add Schedule</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/stock">Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <a href="/logout">
+              <button type="button" class="btn btn-warning">Logout</button>
+            </a>
+          </ul>
+            <p id="user"></p>
+        </div>
+      </nav><br><br><br>
+
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <div class="container">
+    <button type="button" class="btn btn-default" onclick="newUser()">
+      <span class="glyphicon glyphicon-plus"></span> Add User</button>
+    <table class="table" id="adminTable">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Login</th>
+          <th scope="col">New Password</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id="error"></div>
+  </div>
+  <script type="text/javascript" src="client/js/getuserlist.js"></script>
+</body>
+
+</html>

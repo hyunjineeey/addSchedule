@@ -3,22 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="client/css/style.css">
 </head>
 
 <body>
-     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html"><b>Home</b></a></li>
-                <li><a href="schedule.html"><b>Schedule</b></a></li>
-                <li><a href="addSchedule.html"><b>Add Schedule Event</b></a></li>
-                <li><a href="stock.html"><b>Stock Page</b></a></li>
-            </ul>
-        </div>
-    </nav><br><br><br>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/schedule">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addSchedule">Add Schedule</a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/stock">Stock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin</a>
+                    </li>
+                    <a href="/logout">
+                      <button type="button" class="btn btn-warning">Logout</button>
+                    </a>
+                    </ul>
+                    <p id="user"></p>
+                </div>
+              </nav><br><br><br>
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body"><center>Welcome to Stock Page</center></div>
@@ -63,7 +84,6 @@
                 <tr>
                     <th scope="col">Company-MetaData</th>
                     <th scope="col">Stock-Info</th>
-
                 </tr>
             </thead>
             <tbody></tbody>
@@ -77,7 +97,7 @@
         data.addEventListener("click", function(){
             var company = document.getElementById('company').value;
             console.log(company)
-            var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${company}&apikey=YOUT_API_KEY`;
+            var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${company}&apikey=WEM260I1TCTXI2VQ`;
             api('GET', url);
         })
 
