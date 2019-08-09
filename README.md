@@ -1,4 +1,4 @@
-# Add Your Schedule and Control
+# Schedule and User Control System
 
 *Created by Hyunjin*
 
