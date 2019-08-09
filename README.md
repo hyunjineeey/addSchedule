@@ -1,11 +1,14 @@
-# Add Your Schedule using NodeJS
+# Add Your Schedule and Control
 
 *Created by Hyunjin*
 
 *March 28, 2019* 
 
-## Back-end Development
-Used Json, XML, NodeJS
+## Front-end
+HTML, CSS, Bootstrap, JS, jQuery
+
+## Back-end
+Json, XML, NodeJS, MySQL
 
 ## Demo
 
